@@ -1,0 +1,43 @@
+.container{
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 80vh;
+    box-sizing: border-box;
+    border-style: solid;
+}
+
+.intro {
+    font-size: 120px;
+    font-family: monospace;
+}
+
+.text_section {
+    margin: 2vw;
+    height: 30%
+}
+.intro_text {
+    font-size: 30px;
+}
+
+.replace {
+    display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     box-sizing: border-box;
+     height: 60%;
+}
+
+.logo {
+    height: 100px;
+    margin-bottom: 24px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .logo {
+        width: 100%;
+        height: auto;
+    }
+}
