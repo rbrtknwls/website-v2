@@ -2,6 +2,7 @@ package com.aboutme.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Builder
+@Data
 public class Response<T> {
     private Boolean success;
     private List<String> errors;
@@ -27,11 +29,11 @@ public class Response<T> {
         );
     }
 
-    public static ResponseEntity<Response<Object>> buildFailedResponse (List<String> errors) {
+    public static ResponseEntity<Response<Object>> buildFailedResponse (List<Exception> errors) {
         return new ResponseEntity<>(
                 Response.builder()
                         .success(false)
-                        .errors(errors)
+                        .errors(errors.stream().map(Throwable::getMessage).toList())
                         .data(null)
                         .build(),
                 HttpStatus.INTERNAL_SERVER_ERROR
