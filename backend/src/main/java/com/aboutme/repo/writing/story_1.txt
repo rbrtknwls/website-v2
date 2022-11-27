@@ -1,6 +1,0 @@
-Box: Style1
-Content:
-
-
-
-Box: Style1

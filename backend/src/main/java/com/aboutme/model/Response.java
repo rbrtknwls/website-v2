@@ -40,4 +40,15 @@ public class Response<T> {
         );
     }
 
+    public static ResponseEntity<Response<Object>> buildFailedResponse (List<Exception> errors, HttpStatus status) {
+        return new ResponseEntity<>(
+                Response.builder()
+                        .success(false)
+                        .errors(errors.stream().map(Throwable::getMessage).toList())
+                        .data(null)
+                        .build(),
+                status
+        );
+    }
+
 }

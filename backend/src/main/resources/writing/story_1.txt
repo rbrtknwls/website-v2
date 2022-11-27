@@ -1,0 +1,14 @@
+StartBox: SpecialStyle1
+Thump, Thump, Thump.
+EndBox
+StartBox: Style1
+The noise reverberates all over the cramped dark bedroom, its only getting louder and louder.
+
+Roland lies on his back, staring at the blank expression of his blank white ceiling, allowing the noise to wash over him.
+EndBox
+StartBox: SpecialStyle1
+Thump, Thump, Thump. "OPEN UP.... I MISS YOU... OPEN THE DOOR"
+EndBox
+StartBox: Style1
+"Maybe if I keep quiet, they will leave me alone...", Roland thinks to himself while clutching his soft pillow to his chest.
+EndBox
