@@ -27,7 +27,7 @@ class loading extends React.Component {
 
        const server = 'http://www.Aboutmebackend-env.eba-9dbu43hb.sa-east-1.elasticbeanstalk.com/v1/getInfo/' + searchPath;
 
-       fetch(server, {mode: "no-cors"})
+       fetch(server)
            .then((response) => response.json())
            .then((data) => console.log(data));
 
