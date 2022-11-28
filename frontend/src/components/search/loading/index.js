@@ -25,8 +25,9 @@ class loading extends React.Component {
        event.preventDefault();
 
 
-       const server = 'http://www.Aboutmebackend-env.eba-9dbu43hb.sa-east-1.elasticbeanstalk.com/v1/getInfo/' + searchPath;
+       //const server = 'http://www.Aboutmebackend-env.eba-9dbu43hb.sa-east-1.elasticbeanstalk.com/v1/getInfo/' + searchPath;
 
+       const server = 'http://www.localhost:5000/v1/getInfo/short_story_for_megan';
        fetch(server)
            .then((response) => response.json())
            .then((data) => console.log(data));
