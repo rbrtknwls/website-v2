@@ -1,5 +1,6 @@
 import styles from './style.module.css';
 import Loading from './loading'
+import React from "react";
 
 function search() {
 
@@ -20,9 +21,6 @@ function search() {
             </div>
 
         </div>
-
-
-
 
     )
 }

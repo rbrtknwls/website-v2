@@ -51,11 +51,12 @@ public class Story1 {
                             This monster haunted Roland until he couldnt take it anymore, he smashed his fist into the mirror causing it to scatter into a million pieces. Markings still covered his hand from where the jaded glass had cut it open.
                             EndBox
                             StartBox: Style1
-                            He felt the pool of blood spread under his weight covering his backside and reaching the door. He watched as the shadows under the door shifted rapidly when they caught the scent of his blood
+                            He felt the pool of blood spread under his weight covering his backside and reaching the door. He watched as the shadows under the door shifted rapidly when they caught the scent of his blood.
                             EndBox
                             StartBox: SpecialStyle1
                             "OPEN!!! OPEN!!!!" thump, thump, Thump, THUMP, THUMP, THUMP
                             EndBox
+                            StartBox: Style1
                             The monsters had gotten more frantic, the doors vibrations startled him as they got more and more intense. He pressed his back firmly into the wooden door to try and cushion the blows, his hands gripped into the ridges in the wall to support him.
                                         
                             He used to keep track of the days that passed by scraping markings into the wall, a line for each day that would pass. At first it was a relief to him, Roland figured that the most he would be trapped in this room would be 20 days and after that someone would have dealt with the monsters. However as day after day passed and nothing changed.
