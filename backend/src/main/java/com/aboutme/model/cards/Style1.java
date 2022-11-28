@@ -10,6 +10,10 @@ public class Style1 implements ResponseCard {
 
     @Override
     public void updateContent(String content) {
-        this.content = this.content + 'n' + content;
+        if (this.content.equals("")) {
+            this.content = content;
+        } else {
+            this.content = this.content + '\n' + content;
+        }
     }
 }
