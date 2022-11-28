@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './style.module.css';
 
 class loading extends React.Component {
@@ -19,6 +19,20 @@ class loading extends React.Component {
        this.updateState = this.updateState.bind(this);
 
    }
+
+
+   async renderResponse(event, searchPath) {
+       event.preventDefault();
+
+
+       const server = 'http://www.Aboutmebackend-env.eba-9dbu43hb.sa-east-1.elasticbeanstalk.com/v1/getInfo/' + searchPath;
+
+       fetch(server, {mode: "no-cors"})
+           .then((response) => response.json())
+           .then((data) => console.log(data));
+
+   }
+
 
    componentWillMount() {
         var that = this;
@@ -81,6 +95,8 @@ class loading extends React.Component {
 
 
   render() {
+    var setInput = "";
+
     return (
         <div className = "blank">
 
@@ -126,12 +142,14 @@ class loading extends React.Component {
                 <div className = {styles.search_bar}>
                     <form>
                         <input
+                            onInput={event => setInput = event.target.value}
                             type="text"
                             id="header-search"
                             placeholder="..."
                             name="s"
+
                         />
-                        <button type="find out more">Search</button>
+                        <button onClick={event => this.renderResponse(event, setInput)} type="find out more">Search</button>
                     </form>
                 </div>
             </div>
