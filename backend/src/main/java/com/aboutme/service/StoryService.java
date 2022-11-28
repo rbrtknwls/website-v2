@@ -5,7 +5,9 @@ import com.aboutme.model.Constants;
 import com.aboutme.model.FormattedData;
 import com.aboutme.model.cards.ResponseCard;
 import com.aboutme.model.cards.SpecialStyle1;
+import com.aboutme.model.cards.SpecialStyle2;
 import com.aboutme.model.cards.Style1;
+import com.aboutme.repo.writing.Story1;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -20,28 +22,17 @@ public class StoryService {
 
     public FormattedData getStory1() {
 
-        Resource resource = new ClassPathResource("writing/story_1.txt");
-        FormattedData content;
-
-        try {
-            File story = resource.getFile();
-            Scanner scanner = new Scanner(story);
-
-            content = formatFile(scanner);
-            scanner.close();
-
-            return content;
-        } catch (IOException ex) {
-            throw new CouldNotFindContent(ex.getMessage());
-        }
+        return formatFile(Story1.words);
 
     }
 
-    private FormattedData formatFile(Scanner scanner) {
+    private FormattedData formatFile(String story) {
         ArrayList<ResponseCard> storyContent = new ArrayList<>();
         ResponseCard currentCard = null;
-        while (scanner.hasNextLine()) {
-            String data = scanner.nextLine();
+
+        String[] lines = story.split("\n");
+        for (int i = 0; i < lines.length; i++) {
+            String data = lines[i];
 
             if (data.contains(Constants.BOXTYPE)) {
                 String boxType = data.split(": ")[1];
@@ -50,6 +41,9 @@ public class StoryService {
                     case (Constants.SPECIALSTYLE1):
                         currentCard = new SpecialStyle1();
                         break;
+                    case (Constants.SPECIALSTYLE2):
+                        currentCard = new SpecialStyle2();
+                        break;
                     case (Constants.STYLE1):
                         currentCard = new Style1();
                         break;
@@ -57,7 +51,8 @@ public class StoryService {
             } else if (data.contains(Constants.ENDBOX)) {
                 storyContent.add(currentCard);
             } else {
-                currentCard.updateContent(data);
+                assert currentCard != null;
+                currentCard.updateContent(data.trim());
             }
         }
 
